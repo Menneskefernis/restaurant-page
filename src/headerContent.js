@@ -1,5 +1,4 @@
 const header = () => {
-    const body = document.querySelector('body');
     const header = document.createElement('header');
     const bannerElement = document.createElement('div');
     const bannerImage = document.createElement('img');
@@ -25,4 +24,18 @@ const description = () => {
     return description;
 }
 
-export {header, description};
+const menuTabs = () => {
+    const nav = document.createElement('nav');
+    const contactTab = document.createElement('span');
+    const menuTab = document.createElement('span');
+
+    contactTab.textContent = "Contact";
+    menuTab.textContent = "Menu";
+
+    nav.appendChild(menuTab);
+    nav.appendChild(contactTab);
+
+    return nav;
+}
+
+export {header, description, menuTabs};
