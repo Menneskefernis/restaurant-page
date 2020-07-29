@@ -89,4 +89,24 @@ header h1 {
   font-style: italic;
   line-height: 1.5;
 }
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav > * {
+  width: 700px;
+  text-align: center;
+  background-color: #0175b8;
+  color: #f7f7f7;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */
