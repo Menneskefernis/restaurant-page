@@ -57,32 +57,41 @@ header {
   position: relative;
 }
 
-header > div {
+header #banner {
   position: relative;
   height: 20vw;
   width: 100%;
   overflow: hidden;
 }
 
-header > div img {
+header #banner img {
   position: absolute;
   top: -150px;
   width: 100%;
 }
 
-header h1 {
+header #title {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  background-color: rgba(104, 47, 47, 0.3);
+  -webkit-box-shadow: 0 0 6px 6px white;
+          box-shadow: 0 0 6px 6px white;
+}
+
+header #title h1 {
   font-weight: bold;
-  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(124, 76, 76, 0.9)));
-  background: linear-gradient(to right, white, rgba(124, 76, 76, 0.9));
+  background: -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background: linear-gradient(to right, white, white);
+  text-shadow: 2px 2px 4px #006097;
+  /*box-shadow: 0 0 6px 6px white;*/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 5vw;
 }
 
-#description {
+#page-description {
   margin: 30px auto;
   max-width: 600px;
   text-align: center;
@@ -91,16 +100,15 @@ header h1 {
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 0 30px;
 }
 
-nav > * {
-  width: 700px;
+nav > span {
   text-align: center;
   background-color: #0175b8;
   color: #f7f7f7;
@@ -108,5 +116,69 @@ nav > * {
   padding: 20px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+nav > span:hover, nav > span.active {
+  background-color: #0169a5;
+}
+
+nav > span.active {
+  -webkit-box-shadow: 0 0 6px 2px black;
+          box-shadow: 0 0 6px 2px black;
+}
+
+#content {
+  margin: 30px;
+}
+
+#content div {
+  text-align: center;
+}
+
+#content div#contact p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+#content div#contact p:first-child {
+  font-style: italic;
+  font-weight: bold;
+}
+
+#content div#menu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+#content div#menu img {
+  width: 100%;
+}
+
+.menu-item img {
+  display: block;
+}
+
+.menu-item > div {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 6px 6px;
+  border-top: none;
+}
+
+.menu-item > div .dish-title,
+.menu-item > div .price {
+  font-weight: bold;
+  line-height: 2;
+}
+
+.menu-item > div .dish-description {
+  line-height: 1.5;
+}
+
+.menu-item > div .price {
+  font-size: 20px;
 }
 /*# sourceMappingURL=main.css.map */
