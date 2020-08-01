@@ -78,6 +78,7 @@ header #title {
   background-color: rgba(104, 47, 47, 0.3);
   -webkit-box-shadow: 0 0 6px 6px white;
           box-shadow: 0 0 6px 6px white;
+  border-radius: 6px;
 }
 
 header #title h1 {
