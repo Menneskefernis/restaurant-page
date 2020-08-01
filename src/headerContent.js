@@ -1,24 +1,26 @@
 const header = () => {
     const header = document.createElement('header');
-    const bannerContainer = document.createElement('div');
-    const bannerImage = document.createElement('img');
-    const titleContainer = document.createElement('div');
-    const title = document.createElement('h1');
-    
-    bannerContainer.id = 'banner';
-    titleContainer.id = 'title';
+    const bannerContainer = createContainerWithElement('banner', 'img');
+    const titleContainer = createContainerWithElement('title', 'h1');
 
-    bannerImage.src = "./images/Restaurant-banner-1024x373.jpg";
-    bannerImage.alt = "Banner image showing the restaurant";
+    bannerContainer.firstChild.src = "./images/Restaurant-banner-1024x373.jpg";
+    bannerContainer.firstChild.alt = "Banner image showing the restaurant";
 
-    titleContainer.appendChild(title);
-    title.textContent = "THE Restaurant";
+    titleContainer.firstChild.textContent = "THE Restaurant";
 
-    bannerContainer.appendChild(bannerImage);
     header.appendChild(bannerContainer);
     header.appendChild(titleContainer);
 
     return header;
+}
+
+const createContainerWithElement = (name, type) => {
+    const container = document.createElement('div');
+    const element = document.createElement(type);
+    container.id = name;
+    container.appendChild(element);
+
+    return container;
 }
 
 const description = () => {
@@ -29,24 +31,33 @@ const description = () => {
     return description;
 }
 
-const menuTabs = () => {
+const navigation = () => {
+    const tabs = [];
+    
+    tabs.push(createTab('menu'));
+    tabs.push(createTab('contact'));
+
+    tabs[0].classList.add('active');
+
+    return appendTabs(tabs);
+}
+
+const createTab = (name) => {
+    const tab = document.createElement('span');
+    tab.id = `${name}-btn`;
+    tab.classList.add('nav-btn');
+    tab.textContent = name[0].toUpperCase() +  name.slice(1);
+
+    return tab;
+}
+
+const appendTabs = (tabs) => {
     const nav = document.createElement('nav');
-    const contactTab = document.createElement('span');
-    const menuTab = document.createElement('span');
-
-    menuTab.id = "menu-btn";
-    contactTab.id = "contact-btn";
-
-    menuTab.classList.add('nav-btn', 'active');
-    contactTab.classList.add('nav-btn');
-
-    menuTab.textContent = "Menu";
-    contactTab.textContent = "Contact";
-
-    nav.appendChild(menuTab);
-    nav.appendChild(contactTab);
+    tabs.forEach(tab => {
+        nav.appendChild(tab);
+    });
 
     return nav;
 }
 
-export {header, description, menuTabs};
+export {header, description, navigation};

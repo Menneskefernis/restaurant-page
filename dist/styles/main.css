@@ -72,9 +72,9 @@ header #banner img {
 
 header #title {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  padding: 5px;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 15px;
   background-color: rgba(104, 47, 47, 0.3);
   -webkit-box-shadow: 0 0 6px 6px white;
           box-shadow: 0 0 6px 6px white;
@@ -86,7 +86,6 @@ header #title h1 {
   background: -webkit-gradient(linear, left top, right top, from(white), to(white));
   background: linear-gradient(to right, white, white);
   text-shadow: 2px 2px 4px #006097;
-  /*box-shadow: 0 0 6px 6px white;*/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 5vw;
@@ -114,6 +113,7 @@ nav > span {
   background-color: #0175b8;
   color: #f7f7f7;
   font-size: 20px;
+  font-weight: bold;
   padding: 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -124,8 +124,8 @@ nav > span:hover, nav > span.active {
 }
 
 nav > span.active {
-  -webkit-box-shadow: 0 0 6px 2px black;
-          box-shadow: 0 0 6px 2px black;
+  -webkit-box-shadow: 0 0 4px 3px black;
+          box-shadow: 0 0 4px 3px black;
 }
 
 #content {

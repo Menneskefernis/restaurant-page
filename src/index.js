@@ -1,11 +1,11 @@
-import { header, description, menuTabs } from './headerContent';
+import { header, description, navigation } from './headerContent';
 import contactInfo from './contact';
 import menu from './menu';
 
 const body = document.querySelector('body');
 const content = document.getElementById('content');
 
-body.insertAdjacentElement('afterbegin', menuTabs());
+body.insertAdjacentElement('afterbegin', navigation());
 body.insertAdjacentElement('afterbegin', description());
 body.insertAdjacentElement('afterbegin', header());
 
