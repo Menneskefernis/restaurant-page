@@ -140,7 +140,7 @@ nav {
 
 		&#menu {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			grid-gap: 20px;
 
 			img {
@@ -154,6 +154,7 @@ nav {
 
 	img {
 		display: block;
+		border-radius: 6px 6px 0 0;
 	}
 
 	> div {
